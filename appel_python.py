@@ -1,4 +1,13 @@
-import messaging
+import firebase_admin
+
+from firebase_admin import messaging
+
+from firebase_admin import credentials
+
+if not firebase_admin._apps:
+    cred = credentials.Certificate("succopuce-firebase.json") 
+    default_app = firebase_admin.initialize_app(cred)
+
 
 # Define a condition which will send to devices which are subscribed
 # to either the Google stock or the tech industry topics.
